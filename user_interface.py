@@ -113,7 +113,7 @@ def select_card(cards):
         print(str(i) + " - " + str(card))
 
     # get choice
-    choice = get_int_input(0, len(cards))
+    choice = get_int_input(1, len(cards))
     # get card
     if choice == 0:
         return None

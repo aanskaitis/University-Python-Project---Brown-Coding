@@ -21,7 +21,7 @@ class Switch:
 
     self.players -- list of Player objects
     self.stock -- list of cards to draw from
-    self.discards -- list of disracded cards
+    self.discards -- list of discarded cards
     self.skip -- bool indicating that the next player is skipped
     self.draw2 -- bool indicating that the next player must draw 2 cards
     self.draw4 -- bool indicating that the next player must draw 4 cards
@@ -60,7 +60,7 @@ class Switch:
                 break
             else:
                 # advance player index depending on self.direction
-                i = i+self.direction % len(self.players)
+                i = (i+self.direction) % len(self.players)
         UI.print_winner_of_game(self.players[i])
 
     def setup_round(self):
@@ -232,7 +232,7 @@ class Switch:
             self.draw4 = True
         # if card is a king, game direction reverses
         elif card.value == 'K':
-            self.direction *= 1
+            self.direction *= -1
             UI.print_message("Game direction reversed.")
         # if card is a jack, ask player with whom to swap hands
         elif card.value == 'J':
