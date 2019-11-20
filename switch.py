@@ -271,3 +271,5 @@ class Switch:
 
 
 
+game = Switch()
+game.run_game()
