@@ -102,7 +102,7 @@ def test_can_discard__allows_queen():
     assert s.can_discard(Card('♢', 'Q'))
     assert s.can_discard(Card('♡', 'Q'))
     assert s.can_discard(Card('♠', 'Q'))
-
+    assert s.can_discard(Card('♣', 'Q'))
 
 def test_discard_card__sets_skip():
     s = mock_setup_round(['♣4 ♡8', '♣9'], '♢5 ♢6 ♢7 ♢8', '♡3')
