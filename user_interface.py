@@ -36,7 +36,7 @@ def print_winner_of_game(player):
 
 
 def say_goodbye():
-    """say goodbye to my little friend"""
+    """says goodbye"""
     print_message("Goodbye!")
 
 

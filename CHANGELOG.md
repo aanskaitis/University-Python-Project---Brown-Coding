@@ -14,6 +14,7 @@
 12. "=" instead of "==" in run_player function - fixed.
 13. Picking up card if there are no cards left in stock and there's only 1 card in discards - fixed.
 14. Getting normalized hand sizes - fixed.
+15. Function say_goodbye had inappropriate docstring - fixed.
 
 * v1.1.0 [2019-11-08]: Added a SmartAI computer opponent.
   Added strategy players.SmartAI
