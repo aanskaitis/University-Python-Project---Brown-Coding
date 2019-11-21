@@ -127,7 +127,7 @@ class Switch:
         hands = self.get_normalized_hand_sizes(player)
         card = player.select_card(discardable, hands) if discardable else None
 
-        if self.can_discard(card):
+        if card:
             # discard card and determine whether player has won
             self.discard_card(player, card)
             # if all cards discarded, return True

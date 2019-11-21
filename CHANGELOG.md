@@ -11,6 +11,7 @@
 9. King changing direction of the game - fixed.
 10. Player can only discard the same value or suit card or Ace or Queen - fixed.
 11. Drawing 2 and 4 cards message - fixed.
+12. "=" instead of "==" in run_player function - fixed.
 
 * v1.1.0 [2019-11-08]: Added a SmartAI computer opponent.
   Added strategy players.SmartAI
