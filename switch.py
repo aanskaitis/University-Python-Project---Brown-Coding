@@ -162,7 +162,7 @@ class Switch:
                 # add back discarded cards (but not top card)
                 if len(self.discards) == 1:
                     UI.print_message("All cards distributed")
-                    return i-1
+                    return i
                 self.stock = self.discards[:-1]
                 del self.discards[:-1]
                 # shuffle stock
@@ -255,7 +255,7 @@ class Switch:
         sizes = [len(p.hand) for p in self.players]
         idx = self.players.index(player)
         # rotate list so that given player is first
-        sizes = sizes[:idx] + sizes[idx:]
+        sizes = sizes[idx:] + sizes[:idx]
         # if direction is counter-clockwise, reverse the order and
         # bring given player back to the front
         if self.direction == -1:
@@ -269,6 +269,6 @@ class Switch:
         UI.print_message('{} swaps hands with {}.'.format(p1.name, p2.name))
 
 
-
-game = Switch()
-game.run_game()
+if __name__ == '__main__':
+    game = Switch()
+    game.run_game()

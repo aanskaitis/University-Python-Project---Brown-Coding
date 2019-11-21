@@ -12,6 +12,8 @@
 10. Player can only discard the same value or suit card or Ace or Queen - fixed.
 11. Drawing 2 and 4 cards message - fixed.
 12. "=" instead of "==" in run_player function - fixed.
+13. Picking up card if there are no cards left in stock and there's only 1 card in discards - fixed.
+14. Getting normalized hand sizes - fixed.
 
 * v1.1.0 [2019-11-08]: Added a SmartAI computer opponent.
   Added strategy players.SmartAI
