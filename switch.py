@@ -121,13 +121,13 @@ class Switch:
         UI.print_player_info(player, top_card, hand_sizes)
 
         # determine discardable cards
-        discardable = [card for card in player.hand if self.can_discard]
+        discardable = [card for card in player.hand if self.can_discard(card) is True]
 
         # have player select card
         hands = self.get_normalized_hand_sizes(player)
         card = player.select_card(discardable, hands) if discardable else None
 
-        if card:
+        if self.can_discard(card):
             # discard card and determine whether player has won
             self.discard_card(player, card)
             # if all cards discarded, return True
@@ -175,14 +175,13 @@ class Switch:
         return i
 
     def can_discard(self, card):
+        top_card = self.discards[-1]
         """Return whether card can be discarded onto discard pile."""
         # queens and aces can always be discarded
         if card.value in 'QA':
             return True
         # otherwise either suit or value has to match with top card
-        else:
-            top_card = self.discards[-1]
-            return card.suit == top_card.suit and card.value == top_card.value
+        return card.suit == top_card.suit or card.value == top_card.value
 
     def draw_and_discard(self, player):
         """Draw a card from stock and discard it if possible.
